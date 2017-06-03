@@ -3,11 +3,22 @@
   remote_user: root
   
   tasks:
-  - name: install ruby gem
+  - name: Add multiple repositories into the same file
+    become: yes
+    become_user: root
+    become_method: sudo
+    command:
+      yum-config-manager --enable epel
+
+  - name: install packages
+    become: yes
+    become_user: root
+    become_method: sudo
     yum: name={{ item }} state=installed
     with_items: 
       - ruby
       - rubygems
+      - docker
   
   - name: download vagrant install files
     get_url:
