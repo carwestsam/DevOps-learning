@@ -1,3 +1,7 @@
 
 # ignore secret file 
 *.pem
+
+# ignore ansible retry files
+*.retry
+

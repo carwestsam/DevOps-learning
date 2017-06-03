@@ -1,0 +1,24 @@
+---
+- hosts: aws
+  remote_user: root
+  
+  tasks:
+  - name: install ruby gem
+    yum: name={{ item }} state=installed
+    with_items: 
+      - ruby
+      - rubygems
+  
+  - name: download vagrant install files
+    get_url:
+      url: https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.rpm
+      dest: /tmp/vagrant.rpm
+
+  - name: install vagrant package
+    become: yes
+    become_user: root
+    become_method: sudo
+    yum:
+      name: /tmp/vagrant.rpm
+      state: present
+  
