@@ -1,0 +1,11 @@
+version: '2'
+services:
+    quick_start-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/quick_start/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=quick_start
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

@@ -1,0 +1,19 @@
+version: '2'
+services:
+    quick_start-app:
+        image: quick_start
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://quick_start-postgresql:5432/quick_start
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=quick_start-elasticsearch:9300
+        ports:
+            - 8080:8080
+    quick_start-postgresql:
+        extends:
+            file: postgresql.yml
+            service: quick_start-postgresql
+    quick_start-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: quick_start-elasticsearch
