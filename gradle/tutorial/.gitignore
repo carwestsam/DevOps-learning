@@ -1,3 +1,5 @@
 build/
 .gradle/
 .idea/
+tutorial.ipr
+tutorial.iws
