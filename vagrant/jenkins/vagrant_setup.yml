@@ -1,0 +1,17 @@
+- hosts: local
+  
+  tasks:
+    - name: print
+      command: 
+        sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ >> /etc/apt/sources.list'
+
+    - name: apt-get update
+      apt:
+        update_cache: yes
+
+    - name: install dependence packages
+      apt:
+        name: ca-certificates-java,daemon,default-jre-headless,fontconfig-config
+        state: present
+
+
