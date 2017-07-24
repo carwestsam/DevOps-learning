@@ -1,0 +1,18 @@
+{
+  "Comment": "try to upsert route",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "my.t3.com.",
+        "Type": "CNAME",
+        "TTL": 30,
+        "ResourceRecords": [
+          {
+            "Value": "https://s3.amazonaws.com/cf-templates-us-east-1/-EC2WithEIP.yml"
+          }
+        ]
+      } 
+    }
+  ]
+}

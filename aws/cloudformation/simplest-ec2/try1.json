@@ -1,0 +1,13 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources" : {
+    "EC2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.small",
+        "KeyName" : "connect-dev",
+        "ImageId" : "ami-6869aa05"
+      }
+    }
+  }
+}

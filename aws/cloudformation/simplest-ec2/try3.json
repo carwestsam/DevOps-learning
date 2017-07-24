@@ -1,0 +1,11 @@
+{
+  "Resources" : {
+    "EC2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.small",
+        "ImageId" : "ami-6869aa05"
+      }
+    }
+  }
+}
