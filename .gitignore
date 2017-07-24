@@ -5,3 +5,4 @@
 # ignore ansible retry files
 *.retry
 
+*.DS_Store
