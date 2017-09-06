@@ -1,0 +1,114 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters" : {
+    "VpcStackName": {
+      "Default": "aws-production-vpc",
+      "Description" : "Name of the stack which holds infrastructure configuration.",
+      "Type": "String"
+    },  
+    "DBSnapshotArn": {
+      "Description" : "ARN to snapshot from which to restore RDS",
+      "Type": "String",
+      "MinLength": "1",
+      "Default": "arn:aws:rds:us-east-2:168523227096:snapshot:sitecore-test02-snapshot"
+    },
+    "DBName": {
+      "Default": "Sitecore",
+      "Description" : "Sitecore Database name",
+      "Type": "String",
+      "MinLength": "1",
+      "MaxLength": "64",
+      "AllowedPattern" : "[a-zA-Z][a-zA-Z0-9]*",
+      "ConstraintDescription" : "must begin with a letter and contain only alphanumeric characters."
+    },
+    "DBMasterUser": {
+      "NoEcho": "true",
+      "Description" : "Master Username for SQL Server",
+      "Type": "String",
+      "MinLength": "1",
+      "MaxLength": "41",
+      "AllowedPattern" : "[a-zA-Z0-9]*",
+      "Default": "sitecore",
+      "ConstraintDescription" : "must contain only alphanumeric characters."
+    },
+    "DBMasterPassword": {
+      "NoEcho": "true",
+      "Description" : "Master password for SQL Server",
+      "Type": "String",
+      "MinLength": "1",
+      "MaxLength": "41",
+      "AllowedPattern" : "[a-zA-Z0-9]*",
+      "Default":"Sitecore",
+      "ConstraintDescription" : "must contain only alphanumeric characters."
+    }
+  },
+  "Resources": {
+    "Database": {
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "DBInstanceIdentifier": { "Ref": "AWS::StackName" },
+        "AllocatedStorage": "400",
+        "DBInstanceClass": "db.m4.large",
+        "OptionGroupName": "default:sqlserver-se-12-00",
+        "Engine": "sqlserver-se",
+        "MasterUsername": { "Ref" : "DBMasterUser" },
+        "MasterUserPassword": { "Ref" : "DBMasterPassword" },
+        "LicenseModel": "license-included",
+        "DBSubnetGroupName" : { "Ref" : "DBSubnetGroup" },
+        "VPCSecurityGroups": [ { "Fn::GetAtt": [ "DBSecurityGroup", "GroupId" ] } ],
+        "PubliclyAccessible": false,
+        "MultiAZ" : false,
+        "BackupRetentionPeriod" : "10",
+        "AutoMinorVersionUpgrade" : true,
+        "PreferredBackupWindow" : "18:18-18:48",
+        "PreferredMaintenanceWindow" : "mon:14:50-mon:15:20",
+
+        "DBSnapshotIdentifier": { "Ref" : "DBSnapshotArn" },
+        "Tags" : [
+            {"Key" : "Name", "Value" : "Sitecore RDS"},
+            {"Key" : "Stack", "Value" : {"Fn::Sub": "${AWS::StackName}"} },
+            {"Key" : "Environment", "Value" : "Development" }
+        ]
+      }
+    },
+    "DBSubnetGroup" : {
+      "Type" : "AWS::RDS::DBSubnetGroup",
+      "Properties" : {
+        "DBSubnetGroupDescription" : "description",
+        "SubnetIds" : [ { "Fn::ImportValue": {"Fn::Sub" : "${VpcStackName}-PrivateSubnetAZA"} }, { "Fn::ImportValue": {"Fn::Sub" : "${VpcStackName}-PrivateSubnetAZB"} } ],
+        "Tags" : [ {"Key" : "Stack", "Value" : {"Fn::Sub": "${AWS::StackName}"} }, ]
+      }
+    },
+    "DBSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Secuirty group used for RDS part of Sitecore.",
+        "VpcId": { "Fn::ImportValue": {"Fn::Sub" : "${VpcStackName}-VPC"} },
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "10.160.0.0/16",            
+            "IpProtocol": "TCP",
+            "FromPort": "1433",
+            "ToPort": "1433"
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "DBFQDN": {
+      "Description": "FQDN to access RDS used for Sitecore.",
+      "Value": { "Fn::GetAtt": ["Database", "Endpoint.Address"] },
+      "Export" : {
+        "Name" : {"Fn::Sub": "${AWS::StackName}-DB-FQDN" }
+      }
+    },
+    "DBPort": {
+      "Description": "Port to access RDS used for Sitecore.",
+      "Value": { "Fn::GetAtt": ["Database", "Endpoint.Port"] },
+      "Export" : {
+        "Name" : {"Fn::Sub": "${AWS::StackName}-DB-Port" }
+      }
+    }
+  }
+}

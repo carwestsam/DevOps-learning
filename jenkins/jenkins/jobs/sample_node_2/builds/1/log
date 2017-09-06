@@ -1,0 +1,23 @@
+Started by user [8mha:////4L7RjUZweLGNQq1sR9JS7PMzcOH1hmDAgKajAnGcOrgDAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL95MSi8tTiEgB8I+a6wgAAAA==[0mcarwest
+Building on master in workspace /var/jenkins_home/workspace/sample_node_2
+Cloning the remote Git repository
+Cloning repository https://github.com/carwestsam/sample_node_jenkins
+ > git init /var/jenkins_home/workspace/sample_node_2 # timeout=10
+Fetching upstream changes from https://github.com/carwestsam/sample_node_jenkins
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/carwestsam/sample_node_jenkins +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/carwestsam/sample_node_jenkins # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/carwestsam/sample_node_jenkins # timeout=10
+Fetching upstream changes from https://github.com/carwestsam/sample_node_jenkins
+ > git fetch --tags --progress https://github.com/carwestsam/sample_node_jenkins +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 30a0dad49187d7a2009236c0f9cd80455e83e896 (refs/remotes/origin/master)
+Commit message: "init"
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 30a0dad49187d7a2009236c0f9cd80455e83e896
+First time build. Skipping changelog.
+Triggering [8mha:////4BM1dLCO5k7FrubnnMUKS/CHtq0Ssb/HAMlfZMBU71PoAAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZp/az8JP3ixNyCnNT4PKBL4430U1LTEktzSvQBpkQ2AtAAAAA=[0msample_node_2 » default
+[8mha:////4BM1dLCO5k7FrubnnMUKS/CHtq0Ssb/HAMlfZMBU71PoAAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZp/az8JP3ixNyCnNT4PKBL4430U1LTEktzSvQBpkQ2AtAAAAA=[0msample_node_2 » default completed with result SUCCESS
+Finished: SUCCESS

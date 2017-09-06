@@ -1,0 +1,16 @@
+Started by upstream project "[8mha:////4FwdZPK6ohxT/QqS2QWN82DzINkD01T4P72nGORYde46AAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzeEgZh/az8JP3ixNyCnNT4PKBL4430Ad71IIvIAAAA[0msample_node_2" build number [8mha:////4CwIwhZDIGBaZvV8Dz9Q1S678JCYAzDmqi9p78vIwJBBAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBhH9rPwk/eLE3IKc1Pg8oEvjjfSNAJJF2anJAAAA[0m2
+originally caused by:
+ Started by user [8mha:////4L7RjUZweLGNQq1sR9JS7PMzcOH1hmDAgKajAnGcOrgDAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL95MSi8tTiEgB8I+a6wgAAAA==[0mcarwest
+Building on master in workspace /var/jenkins_home/workspace/sample_node_2/default
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/carwestsam/sample_node_jenkins # timeout=10
+Fetching upstream changes from https://github.com/carwestsam/sample_node_jenkins
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/carwestsam/sample_node_jenkins +refs/heads/*:refs/remotes/origin/*
+Checking out Revision afe027abe5a8432ddbb0f45b38d8c6f235085da7 (refs/remotes/origin/master)
+Commit message: "update 1"
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f afe027abe5a8432ddbb0f45b38d8c6f235085da7
+ > git rev-list 30a0dad49187d7a2009236c0f9cd80455e83e896 # timeout=10
+Finished: SUCCESS

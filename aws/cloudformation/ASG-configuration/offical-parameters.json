@@ -1,0 +1,15 @@
+[
+  {
+    "ParameterKey": "VpcId",
+    "ParameterValue": "vpc-abf48bd2"
+  },
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "connect-dev"
+  },
+  {
+    "ParameterKey": "Subnets",
+    "ParameterValue": "subnet-6520d701,subnet-fc1a7ba6"
+  }
+]
+

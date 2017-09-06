@@ -1,0 +1,79 @@
+Started by user [8mha:////4L7RjUZweLGNQq1sR9JS7PMzcOH1hmDAgKajAnGcOrgDAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL95MSi8tTiEgB8I+a6wgAAAA==[0mcarwest
+Building in workspace /var/jenkins_home/workspace/hello
+Cloning the remote Git repository
+Cloning repository https://github.com/carwestsam/templates
+ > git init /var/jenkins_home/workspace/hello # timeout=10
+Fetching upstream changes from https://github.com/carwestsam/templates
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/carwestsam/templates +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/carwestsam/templates # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/carwestsam/templates # timeout=10
+Fetching upstream changes from https://github.com/carwestsam/templates
+ > git fetch --tags --progress https://github.com/carwestsam/templates +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision e875c9857d9417c34db4db0cdd03f0151f8011e8 (refs/remotes/origin/master)
+Commit message: "simple flask example"
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e875c9857d9417c34db4db0cdd03f0151f8011e8
+First time build. Skipping changelog.
+[hello] $ /bin/sh -xe /tmp/jenkins1425617909177850262.sh
++ find .
+.
+./.git
+./.git/branches
+./.git/config
+./.git/description
+./.git/FETCH_HEAD
+./.git/HEAD
+./.git/hooks
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/update.sample
+./.git/index
+./.git/info
+./.git/info/exclude
+./.git/logs
+./.git/logs/HEAD
+./.git/logs/refs
+./.git/logs/refs/remotes
+./.git/logs/refs/remotes/origin
+./.git/logs/refs/remotes/origin/master
+./.git/objects
+./.git/objects/12
+./.git/objects/12/18be2ea22c4b07965c842b9b00dc6734f30a49
+./.git/objects/42
+./.git/objects/42/34542475efc927f3fed32d5cbe33a5092fcad4
+./.git/objects/56
+./.git/objects/56/61840d9bb11756f141d0f7e2d068944ca2ead5
+./.git/objects/63
+./.git/objects/63/8988b225b2bc74fdb0ec47eea2cfba23554127
+./.git/objects/7e
+./.git/objects/7e/4e2c703e08d6588ffc1f471851f3eefad9c24a
+./.git/objects/c1
+./.git/objects/c1/24f5f53e0614984de714444c720bd4835d7ff3
+./.git/objects/cc
+./.git/objects/cc/92a867cd0eb251098e83e33df061be99704285
+./.git/objects/e8
+./.git/objects/e8/75c9857d9417c34db4db0cdd03f0151f8011e8
+./.git/objects/info
+./.git/objects/pack
+./.git/refs
+./.git/refs/heads
+./.git/refs/remotes
+./.git/refs/remotes/origin
+./.git/refs/remotes/origin/master
+./.git/refs/tags
+./flask
+./flask/.gitignore
+./flask/simple.py
+./README.md
+Finished: SUCCESS
